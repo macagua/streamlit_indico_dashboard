@@ -16,4 +16,4 @@ Tested it with
 Development
 ===========
 
-Checkout the Development notes at [DEVELOP.rst](doc/DEVELOP.rst).
+Checkout the Development notes at `DEVELOP.rst <doc/DEVELOP.rst>`_.
