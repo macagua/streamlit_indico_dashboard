@@ -12,3 +12,8 @@ Tested it with
 - Debian GNU/Linux 10.
 
 - Ubuntu 20.04.6 LTS.
+
+Development
+===========
+
+Checkout the Development notes at [DEVELOP.rst](doc/DEVELOP.rst).
