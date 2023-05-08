@@ -1,0 +1,16 @@
+[flake8]
+exclude =
+    .git,
+    __init__.py,
+    __pycache__,
+    docs/source/conf.py,
+    build,
+    data,
+    dist,
+    bnk,
+    venv
+ignore =
+    # line too long, fixed by black
+    E501,
+    # line break before binary operator
+    W503,

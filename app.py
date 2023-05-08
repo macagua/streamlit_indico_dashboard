@@ -8,6 +8,7 @@ import pandas as pd
 import plotly.express as px
 import streamlit as st
 
+
 # ---- MAKE A FULL PATH FOR THE EXCEL FILE ----
 def get_full_path(filename):
     """Get full path for Excel file name
@@ -22,6 +23,7 @@ def get_full_path(filename):
         os.path.abspath(__file__)
     ) + os.sep + "data" + os.sep + filename
     return full_path
+
 
 # ---- READ EXCEL FILE ----
 @st.cache_data
@@ -69,11 +71,11 @@ def get_data_from_excel(file_path, sheet_name, day_name):
         # TODO: Add implementation
         # Renamed 'Tags' column to dataframe
         df.rename(columns={
-                "Track": "Tematicas",
-                "Title": "Titulo_Ponencia",
-            }, inplace=True
-        )
+            "Track": "Tematicas",
+            "Title": "Titulo_Ponencia",
+        }, inplace=True)
     return df
+
 
 # ---- SET PAGE CONFIG ----
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
@@ -257,12 +259,12 @@ with columna_media:
 with columna_derecha:
     st.subheader("Total de Participantes :school_satchel:")
     st.subheader(f":busts_in_silhouette: {total_participantes}")
-    #st.markdown("""---""")
-    #st.subheader("Total de Facilitadores :school:")
-    #st.subheader(f"{total_facilitadores}")
+    # st.markdown("""---""")
+    # st.subheader("Total de Facilitadores :school:")
+    # st.subheader(f"{total_facilitadores}")
     st.markdown("""---""")
     st.subheader("Total de Moderadores :bust_in_silhouette:")
-    st.subheader(f":busts_in_silhouette: 8")
+    st.subheader(":busts_in_silhouette: 8")
     st.markdown("""---""")
     st.subheader("Total de Staff :bust_in_silhouette:")
     st.subheader(f":busts_in_silhouette: {total_staff}")
@@ -308,8 +310,8 @@ fig_ponencias_por_tematicas.update_layout(
 )
 
 columna_izquierda, columna_derecha = st.columns(2)
-#columna_derecha = st.columns(1)
-#columna_izquierda.plotly_chart(fig_ventas_por_horas, use_container_width=True)
+# columna_derecha = st.columns(1)
+# columna_izquierda.plotly_chart(fig_ventas_por_horas, use_container_width=True)
 columna_derecha.plotly_chart(
     fig_ponencias_por_tematicas,
     use_container_width=True
@@ -327,4 +329,4 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-#import pdb; pdb.set_trace();
+# import pdb; pdb.set_trace();
