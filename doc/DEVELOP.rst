@@ -70,3 +70,19 @@ Examples of the use:
 ::
 
     python -m pycodestyle app.py
+
+
+isort
+=====
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m isort --help
+
+Examples of the use:
+
+::
+
+    python -m isort app.py

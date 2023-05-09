@@ -1,6 +1,7 @@
 """Indico Software Dashboard App Settings"""
 
 import os
+
 from dotenv import load_dotenv
 
 ### DotENV #################################################################
