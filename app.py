@@ -1,4 +1,7 @@
-"""Indico Software Dashboard App"""
+"""Indico Software Dashboard.
+
+Indico Software Dashboard App
+"""
 
 # @Email:  leonardocaballero@gmail.com
 # @Website:  https://entrenamiento-data-scientist-python.readthedocs.io/
@@ -14,7 +17,7 @@ import streamlit as st
 
 # ---- MAKE A FULL PATH FOR THE EXCEL FILE ----
 def get_full_path(filename):
-    """Get full path for Excel file name
+    """Get full path for Excel file name.
 
     Args:
         filename (str): Excel file name
@@ -31,7 +34,7 @@ def get_full_path(filename):
 # ---- READ EXCEL FILE ----
 @st.cache_data
 def get_data_from_excel(file_path, sheet_name, day_name):
-    """Read a Excel file and put it into a Dataframe
+    """Read a Excel file and put it into a Dataframe.
 
     Args:
         file_path (str): the full path for Excel name to read
@@ -40,7 +43,6 @@ def get_data_from_excel(file_path, sheet_name, day_name):
     Returns:
         Dataframe: a Dataframe with the data from Excel file
     """
-
     data_frame = pd.read_excel(
         io=file_path,
         engine="openpyxl",

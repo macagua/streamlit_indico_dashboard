@@ -110,3 +110,19 @@ Fix the Python module:
 ::
 
     python -m black app.py
+
+
+pydocstyle
+==========
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m pydocstyle --help
+
+Examples of the use:
+
+::
+
+    python -m pydocstyle app.py

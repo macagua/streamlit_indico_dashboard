@@ -17,3 +17,5 @@ wrapt==1.15.0
 black==23.3.0
 mypy-extensions==1.0.0
 pathspec==0.11.1
+pydocstyle==6.3.0
+snowballstemmer==2.2.0

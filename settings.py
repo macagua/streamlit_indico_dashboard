@@ -1,4 +1,4 @@
-"""Indico Software Dashboard App Settings"""
+"""Indico Software Dashboard App Settings."""
 
 import os
 
