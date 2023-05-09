@@ -158,3 +158,47 @@ Examples of the use:
 ::
 
     python -m bandit -r app.py
+
+
+wily
+====
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m wily --help
+
+Build the wily cache
+--------------------
+
+::
+
+    python -m wily build app.py
+
+Show metrics for a given file
+-----------------------------
+
+Graph test.py against 'loc', 'sloc' and 'comments' (raw operator) metrics:
+
+::
+
+    python -m wily report app.py loc sloc comments --message
+
+Graph a specific metric for a given file
+----------------------------------------
+
+Graph a specific metric for a given file, if a path is given, all files
+within path will be graphed.
+
+Make a graph *.py files against 'loc' and 'sloc' (raw operator) metrics:
+
+::
+
+    python -m wily graph app.py loc sloc
+
+Make a graph *.py files against 'complexity' (cyclomatic operator) metrics:
+
+::
+
+    python -m wily graph app.py complexity

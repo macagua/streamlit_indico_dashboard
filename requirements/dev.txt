@@ -24,3 +24,16 @@ bandit==1.7.5
 PyYAML==6.0
 pbr==5.11.1
 stevedore==5.0.0
+wily==1.24.0
+colorama==0.4.6
+colorlog==4.8.0
+fastjsonschema==2.16.3
+flake8-polyfill==1.0.2
+future==0.18.3
+jupyter-core==5.3.0
+mando==0.6.4
+nbformat==5.8.0
+progress==1.6
+radon==4.0.0
+tabulate==0.9.0
+traitlets==5.9.0
