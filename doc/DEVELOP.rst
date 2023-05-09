@@ -86,3 +86,27 @@ Examples of the use:
 ::
 
     python -m isort app.py
+
+
+black
+=====
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m black --help
+
+Examples of the use:
+
+Check the Python module without made changes it:
+
+::
+
+    python -m black app.py --check
+
+Fix the Python module:
+
+::
+
+    python -m black app.py
