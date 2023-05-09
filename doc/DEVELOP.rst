@@ -54,3 +54,19 @@ Examples of the use for disable some check messages:
 ::
 
     python -m pylint --disable=C0103,W0511 app.py
+
+
+pycodestyle
+===========
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m pycodestyle --help
+
+Examples of the use:
+
+::
+
+    python -m pycodestyle app.py
