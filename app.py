@@ -1,3 +1,5 @@
+"""Indico Software Dashboard App"""
+
 # @Email:  leonardocaballero@gmail.com
 # @Website:  https://entrenamiento-data-scientist-python.readthedocs.io/
 # @Github:  https://github.com/macagua
@@ -37,7 +39,8 @@ def get_data_from_excel(file_path, sheet_name, day_name):
     Returns:
         Dataframe: a Dataframe with the data from Excel file
     """
-    df = pd.read_excel(
+
+    data_frame = pd.read_excel(
         io=file_path,
         engine="openpyxl",
         sheet_name=sheet_name,
@@ -45,36 +48,36 @@ def get_data_from_excel(file_path, sheet_name, day_name):
         nrows=1000,
     )
     # Added 'Dia' column to dataframe
-    df["Dia"] = day_name
+    data_frame["Dia"] = day_name
 
     if sheet_name == "registrations":
         # Renamed 'Tags' column to dataframe
-        df.rename(columns={"Tags": "Tipo_Participantes"}, inplace=True)
+        data_frame.rename(columns={"Tags": "Tipo_Participantes"}, inplace=True)
         # Renamed 'Registration state' column to dataframe
-        df.rename(columns={"Registration state": "Estado_Registro"}, inplace=True)
+        data_frame.rename(columns={"Registration state": "Estado_Registro"}, inplace=True)
         # Renamed 'Registration date' column to dataframe
-        df.rename(columns={"Registration date": "Fecha_Registro"}, inplace=True)
+        data_frame.rename(columns={"Registration date": "Fecha_Registro"}, inplace=True)
         # Renamed 'Country' column to dataframe
-        df.rename(columns={"Country": "Pais"}, inplace=True)
+        data_frame.rename(columns={"Country": "Pais"}, inplace=True)
         # Renamed 'Name' column to dataframe
-        df.rename(columns={"Name": "Nombre"}, inplace=True)
+        data_frame.rename(columns={"Name": "Nombre"}, inplace=True)
         # Renamed 'Correo electrónico' column to dataframe
-        df.rename(columns={"Correo electrónico": "Correo_electronico"}, inplace=True)
+        data_frame.rename(columns={"Correo electrónico": "Correo_electronico"}, inplace=True)
         # Renamed 'Completed' elements in the 'Estado_Registro' column to dataframe
-        df["Estado_Registro"].replace(to_replace="Completed", value="Completado")
+        data_frame["Estado_Registro"].replace(to_replace="Completed", value="Completado")
         # Renamed '' elements in the 'Country' column to dataframe
-        df.Pais = df.Pais.fillna("Desconocido")
+        data_frame.Pais = data_frame.Pais.fillna("Desconocido")
     elif sheet_name == "abstracts":
         # TODO: Add implementation
         pass
     elif sheet_name == "contributions":
         # TODO: Add implementation
         # Renamed 'Tags' column to dataframe
-        df.rename(columns={
+        data_frame.rename(columns={
             "Track": "Tematicas",
             "Title": "Titulo_Ponencia",
         }, inplace=True)
-    return df
+    return data_frame
 
 
 # ---- SET PAGE CONFIG ----
@@ -183,38 +186,48 @@ total_track_0 = int(
         ]
     )
 )
+
+TRACK_1 = 'Transformación cultural organizacional'
 total_track_1 = int(
     len(
         df_seleccion_dia1_contributions.loc[
-            df_seleccion_dia1_contributions['Tematicas'] == 'Transformación cultural organizacional'
+            df_seleccion_dia1_contributions['Tematicas'] == TRACK_1
         ]
     )
 )
+
+TRACK_2 = 'Desarrollo de Equipos y Liderazgo Ágil'
 total_track_2 = int(
     len(
         df_seleccion_dia1_contributions.loc[
-            df_seleccion_dia1_contributions['Tematicas'] == 'Desarrollo de Equipos y Liderazgo Ágil'
+            df_seleccion_dia1_contributions['Tematicas'] == TRACK_2
         ]
     )
 )
+
+TRACK_3 = 'Marcos de trabajo y metodologías ágiles'
 total_track_3 = int(
     len(
         df_seleccion_dia1_contributions.loc[
-            df_seleccion_dia1_contributions['Tematicas'] == 'Marcos de trabajo y metodologías ágiles'
+            df_seleccion_dia1_contributions['Tematicas'] == TRACK_3
         ]
     )
 )
+
+TRACK_4 = 'Mindset Agile'
 total_track_4 = int(
     len(
         df_seleccion_dia1_contributions.loc[
-            df_seleccion_dia1_contributions['Tematicas'] == 'Mindset Agile'
+            df_seleccion_dia1_contributions['Tematicas'] == TRACK_4
         ]
     )
 )
+
+TRACK_5 = 'Otros conceptos importantes de la cultura agile'
 total_track_5 = int(
     len(
         df_seleccion_dia1_contributions.loc[
-            df_seleccion_dia1_contributions['Tematicas'] == 'Otros conceptos importantes de la cultura agile'
+            df_seleccion_dia1_contributions['Tematicas'] == TRACK_5
         ]
     )
 )
