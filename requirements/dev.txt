@@ -37,3 +37,10 @@ progress==1.6
 radon==4.0.0
 tabulate==0.9.0
 traitlets==5.9.0
+pre-commit==3.2.2
+cfgv==3.3.1
+distlib==0.3.6
+filelock==3.12.0
+identify==2.5.24
+nodeenv==1.7.0
+virtualenv==20.23.0

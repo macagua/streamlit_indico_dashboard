@@ -1,0 +1,101 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+# See a Spanish tutorial for more information https://seraph13.medium.com/desarrollar-c%C3%B3digo-python-limpio-con-pre-commit-6d760a39aa08
+exclude: |
+    (?x)^(
+        bnk/|
+        doc/|
+        data/|
+        requirements/|
+        venv/
+    )
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.2
+    hooks:
+      - id: pyupgrade
+        args: [--py39-plus]
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v3.9.0
+    hooks:
+      - id: reorder-python-imports
+        name: Reorder Python imports (images, pdfs)
+        files: "^(?!examples/)"
+        args: ["--application-directories", ".:images:pdfs"]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+      - id: check-yaml
+        exclude: (bnk|venv).*\.(yml|yaml)$
+      - id: check-merge-conflict
+      - id: check-ast
+      - id: double-quote-string-fixer
+      - id: debug-statements
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+      - id: isort
+  - repo: local
+    hooks:
+      - id: wily
+        name: wily
+        entry: wily diff
+        verbose: true
+        language: python
+        additional_dependencies: [wily]
+  - repo: local
+    hooks:
+      - id: pydocstyle
+        name: pydocstyle
+        entry: pydocstyle
+        # files: src/app.py
+        # files: *.py
+        verbose: true
+        language: python
+        additional_dependencies: [pydocstyle]
+  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
+    rev: v1.3.1
+    hooks:
+      - id: python-safety-dependencies-check
+  - repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+        language_version: python3.8
+  - repo: https://github.com/PyCQA/pylint
+    rev: v2.17.3
+    hooks:
+      - id: pylint
+        args: ["--disable=similarities"]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.2.0
+    hooks:
+      - id: mypy
+        exclude: ^venv/
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies: [flake8-typing-imports==1.10.0]
+  - repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v2.0.2
+    hooks:
+      - id: autopep8
+  - repo: https://github.com/asottile/blacken-docs
+    rev: 1.13.0
+    hooks:
+      - id: blacken-docs
+        additional_dependencies: [black==23.3.0]
+  - repo: local
+    hooks:
+      - id: bandit
+        name: bandit
+        description: 'Bandit is a tool for finding common security issues in Python code'
+        entry: bandit
+        args: [-lll, --recursive, .]
+        language: python
+        language_version: python3
+        types: [python]

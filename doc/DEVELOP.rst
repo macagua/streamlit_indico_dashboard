@@ -16,6 +16,7 @@ Pre requirements dependencies:
     source venv/bin/activate
     pip install -U pip
     pip install -r requirements/dev.txt
+    pre-commit install
 
 
 flake8
@@ -202,3 +203,26 @@ Make a graph *.py files against 'complexity' (cyclomatic operator) metrics:
 ::
 
     python -m wily graph app.py complexity
+
+
+pre-commit
+==========
+
+You can see all options for the script, executing the following command:
+
+::
+
+    pre-commit --help
+
+Examples of the use:
+
+::
+
+    pre-commit run --all-files
+
+Ignore commit verification
+--------------------------
+
+::
+
+    git commit --interactive --no-verify
