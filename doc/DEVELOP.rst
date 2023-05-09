@@ -126,3 +126,19 @@ Examples of the use:
 ::
 
     python -m pydocstyle app.py
+
+
+mypy
+====
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m mypy --help
+
+Examples of the use:
+
+::
+
+    python -m mypy app.py
