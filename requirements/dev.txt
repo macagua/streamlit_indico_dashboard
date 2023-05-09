@@ -20,3 +20,7 @@ pathspec==0.11.1
 pydocstyle==6.3.0
 snowballstemmer==2.2.0
 mypy==1.2.0
+bandit==1.7.5
+PyYAML==6.0
+pbr==5.11.1
+stevedore==5.0.0

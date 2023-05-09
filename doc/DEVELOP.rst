@@ -142,3 +142,19 @@ Examples of the use:
 ::
 
     python -m mypy app.py
+
+
+bandit
+======
+
+You can see all options for the script, executing the following command:
+
+::
+
+    python -m bandit --help
+
+Examples of the use:
+
+::
+
+    python -m bandit -r app.py
